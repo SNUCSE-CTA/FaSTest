@@ -79,9 +79,9 @@ struct BipartiteMaximumMatching {
     bool FindUnmatchableEdges(int required) {
         ord = 0;
         found_scc = 0;
-        memset(dfsn, 0, arr_len);
-        memset(scch, 0, arr_len);
-        memset(scc_idx, -1, arr_len);
+        memset(dfsn, 0, arr_len*sizeof(int));
+        memset(scch, 0, arr_len*sizeof(int));
+        memset(scc_idx, -1, arr_len*sizeof(int));
         int num_matched_ans = Solve();
         if (num_matched_ans != required) return false;
         for (int i = 0; i < num_matched_ans; i++) {
